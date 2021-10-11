@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+
+	<title>이고장 충진기</title>
+	<!-- <script src="js/jquery.js"></script> -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<style>
+		body {
+			background-color: black;
+		}
+
+		.mainTitle {
+			font-size: 20px;
+			letter-spacing: .005em;
+			box-sizing: border-box;
+			font-weight: 400;
+			display: flex;
+			align-items: center;
+			flex-direction: row;
+			width: 100%;
+			height: 64px;
+			max-height: 64px;
+			padding: 0 16px;
+			margin: 0;
+			color:#eeeeee;
+			background-color: #097479;
+		}
+
+		.FrameDiv {
+			width: 600px;
+			height: 400px;
+			margin-left: 50px;
+			background-color: #333333;
+		}
+
+		.TextDiv {
+			width: 110px;
+			height: 50px;
+			display: inline-block;
+			margin: 15px;
+			border-style:solid;   /* 테두리 스타일 - 선으로 된 점선 */
+			border-width:1px; 		/* 테두리 굵기 - 2px */
+			text-align: center;
+			color: #eeeeee;
+			background-color:#333333;
+			border-color: black;
+		}
+
+		.titleItem {
+			height: 20px;
+			font-size: 0.8em;
+			background-color:rgb(0, 97, 97);
+		}
+
+		.dataItem {
+			height: 30px;
+			font-size: 1.3em;
+			background-color:rgb(1, 1, 105);
+			vertical-align: middle;
+		}
+
+		.PwrButton {
+			width: 150px;
+			height: 100px;
+			display: inline-block;
+			margin: 0px;
+			text-align: center;
+			background-color: red;
+			vertical-align: middle;
+		}
+
+		.ledBlock {
+			width: 380px;
+			height: 100px;
+			display: inline-block;
+			margin: 10px;
+			vertical-align: middle;
+		}
+
+		.led {
+			width: 90px;
+			height: 42px;
+			display: inline-flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+		}
+
+		span.name {
+			text-align:left;
+			margin-left: 6px;
+			margin-right: 6px;
+			overflow-wrap: break-word;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			flex-grow: 1;
+			color: #eeeeee;
+		}
+
+		.led_contents {
+			min-height: 14px;
+			min-width: 14px;
+			height: 14px;
+			width: 14px;
+			max-height: 14px;
+			max-width: 14px;
+			margin: 11px;
+			border-radius: 50%;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="mainTitle" id="toolbar">
+		<h2> 이고장 충진기</h2>
+		<div style="margin: 5px 5px 5px auto;">
+			<p id="clock"></p>
+		</div>
+	</div>
+
+	<div class="FrameDiv" id="FrameDivId">
+		<p style="color:#0eb8c0; margin: 20px; font-size: 25px;">스마트 관리 자동화<br></p>
+		<div  class="TextDiv"><div class="titleItem">목표생산량</div><div class="dataItem">1000</div></div>
+		<div  class="TextDiv"><div class="titleItem">일 생산량</div><div class="dataItem">240</div></div>
+		<div  class="TextDiv"><div class="titleItem">일 가동시간</div><div class="dataItem">00:00:20</div></div>
+		<div  class="TextDiv"><div class="titleItem">온도</div><div class="dataItem">25.30</div></div>
+
+		<div  class="TextDiv"><div class="titleItem">현재생산량</div><div class="dataItem">240</div></div>
+		<div  class="TextDiv"><div class="titleItem">월 생산량</div><div class="dataItem">1201</div></div>
+		<div  class="TextDiv"><div class="titleItem">월 가동시간</div><div class="dataItem">01:32:20</div></div>
+		<div  class="TextDiv"><div class="titleItem">습도</div><div class="dataItem">54.10</div></div>
+
+		<button disabled class="PwrButton" style="color: #eeeeee; font-size: 30px;">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style="fill: white;">
+				<path d="M13 3h-2v10h2V3z"></path>
+				<path d="M17.83 5.17l-1.42 1.42A6.92 6.92 0 0 1 19 12c0 3.87-3.13 7-7 7A6.995 6.995 0 0 1 7.58 6.58L6.17 5.17A8.932 8.932 0 0 0 3 12a9 9 0 0 0 18 0c0-2.74-1.23-5.18-3.17-6.83z">
+				</path></svg>정지</button>
+
+		<div class="ledBlock">
+			<div class="led"><span class="name">알람</span>
+				<div class="led_contents" style=" background-color: #008000;
+					box-shadow: #0000009e 0 0px 2px 0px, #008000 0 0px 7px 2px, inset #00000017 0 -1px 1px 0px;">
+				</div></div>
+
+			<div class="led"><span class="name">실링1</span>
+				<div class="led_contents" style=" background-color: #008000;
+					box-shadow: #0000009e 0 0px 2px 0px, #008000 0 0px 7px 2px, inset #00000017 0 -1px 1px 0px;">
+				</div></div>
+
+			<div class="led"><span class="name">실링2</span>
+				<div class="led_contents" style=" background-color: #008000;
+					box-shadow: #0000009e 0 0px 2px 0px, #008000 0 0px 7px 2px, inset #00000017 0 -1px 1px 0px;">
+				</div></div>
+
+			<div class="led"><span class="name">투입알람</span>
+				<div class="led_contents" style=" background-color: #008000;
+					box-shadow: #0000009e 0 0px 2px 0px, #008000 0 0px 7px 2px, inset #00000017 0 -1px 1px 0px;">
+				</div></div>
+
+			<div class="led"><span class="name">투입확인</span>
+				<div class="led_contents" style=" background-color: #008000;
+					box-shadow: #0000009e 0 0px 2px 0px, #008000 0 0px 7px 2px, inset #00000017 0 -1px 1px 0px;">
+				</div></div>
+
+			<div class="led"><span class="name">인덱스</span>
+				<div class="led_contents" style=" background-color: #008000;
+					box-shadow: #0000009e 0 0px 2px 0px, #008000 0 0px 7px 2px, inset #00000017 0 -1px 1px 0px;">
+				</div></div>
+
+			<div class="led"><span class="name">필림풀림</span>
+				<div class="led_contents" style=" background-color: #008000;
+					box-shadow: #0000009e 0 0px 2px 0px, #008000 0 0px 7px 2px, inset #00000017 0 -1px 1px 0px;">
+				</div></div>
+
+			<div class="led"><span class="name">목표생산</span>
+				<div class="led_contents" style=" background-color: #008000;
+					box-shadow: #0000009e 0 0px 2px 0px, #008000 0 0px 7px 2px, inset #00000017 0 -1px 1px 0px;">
+				</div></div>
+		</div>
+	</div>
+	
+	<script type='text/javascript'>
+		function upTime() {
+      var d = new Date();
+			// document.getElementById("clock").innerText = d.toLocaleTimeString('de-AT');
+			$("#clock").text(d.toLocaleTimeString('de-AT'));
+			// $("#FrameDivId").load(location.href + " #FrameDivId");
+			$('#FrameDivId').load(' #FrameDivId > *');
+    }
+
+    setInterval(upTime,1000);
+</script>
+</body>
+
+</html>

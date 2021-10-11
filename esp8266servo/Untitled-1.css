@@ -1,0 +1,49 @@
+<md-card ui-template="me.item.format" ui-card-size="2x1" class="nr-dashboard-template nr-dashboard-ui_led visible" ng-class="{'nr-dashboard-disabled':me.item.disabled}" ng-show="true" node-id="14b590aa14e92a2f" aria-hidden="false" style="left: 162px; top: 216px; width: 102px; height: 48px;"><style>div.led_98.control {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+div.led_98>span.name {
+    text-align: left;
+    margin-left: 6px;
+    margin-right: 6px;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+}
+
+</style><div class="led_98 control"><span class="name">알람</span><style>div.led_98.led_contents {
+    min-height: 14px;
+    min-width: 14px;
+    height: 14px;
+    width: 14px;
+    max-height: 14px;
+    max-width: 14px;
+    text-align: center;
+    margin: 11px;
+    border-radius: 50%;
+}
+
+.led_98.curveShine {
+    width: 70%;
+    height: 70%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(0, 255, 31, 0) 60%);
+    '
+
+}
+
+</style><div class="led_98 led_contents" id="led_98" style="
+ background-color: #008000;
+box-shadow : #0000009e 0 0px 2px 0px,
+#008000 0 0px 7px 2px,
+inset #00000017 0 -1px 1px 0px;
+">
+ </div></div></md-card>
